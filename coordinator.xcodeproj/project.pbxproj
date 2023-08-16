@@ -13,6 +13,15 @@
 		0221157B2A8D6554001E52C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022115792A8D6554001E52C1 /* LaunchScreen.storyboard */; };
 		022115842A8D66DA001E52C1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115832A8D66DA001E52C1 /* FirstViewController.swift */; };
 		022115872A8D6700001E52C1 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115862A8D6700001E52C1 /* FirstView.swift */; };
+		022115892A8D6F2D001E52C1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115882A8D6F2D001E52C1 /* SecondViewController.swift */; };
+		0221158B2A8D6F37001E52C1 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221158A2A8D6F37001E52C1 /* SecondView.swift */; };
+		0221158E2A8D6F5F001E52C1 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221158D2A8D6F5F001E52C1 /* ThirdView.swift */; };
+		022115902A8D6FD7001E52C1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221158F2A8D6FD7001E52C1 /* ThirdViewController.swift */; };
+		022115972A8D7382001E52C1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115962A8D7382001E52C1 /* Coordinator.swift */; };
+		022115992A8D73A6001E52C1 /* FirstScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115982A8D73A6001E52C1 /* FirstScreenCoordinator.swift */; };
+		0221159E2A8D7424001E52C1 /* SecondScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221159D2A8D7424001E52C1 /* SecondScreenCoordinator.swift */; };
+		022115A02A8D746F001E52C1 /* ThirdScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221159F2A8D746F001E52C1 /* ThirdScreenCoordinator.swift */; };
+		022115A32A8D7654001E52C1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115A22A8D7654001E52C1 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		0221157C2A8D6554001E52C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		022115832A8D66DA001E52C1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		022115862A8D6700001E52C1 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		022115882A8D6F2D001E52C1 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0221158A2A8D6F37001E52C1 /* SecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		0221158D2A8D6F5F001E52C1 /* ThirdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		0221158F2A8D6FD7001E52C1 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		022115962A8D7382001E52C1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		022115982A8D73A6001E52C1 /* FirstScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenCoordinator.swift; sourceTree = "<group>"; };
+		0221159D2A8D7424001E52C1 /* SecondScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenCoordinator.swift; sourceTree = "<group>"; };
+		0221159F2A8D746F001E52C1 /* ThirdScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreenCoordinator.swift; sourceTree = "<group>"; };
+		022115A22A8D7654001E52C1 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,8 @@
 		0221156D2A8D6552001E52C1 /* coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				022115A12A8D7654001E52C1 /* Components */,
+				022115922A8D733C001E52C1 /* Coordinators */,
 				022115822A8D66BF001E52C1 /* Controllers */,
 				0221156E2A8D6552001E52C1 /* AppDelegate.swift */,
 				022115702A8D6552001E52C1 /* SceneDelegate.swift */,
@@ -70,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				022115852A8D66F4001E52C1 /* FirstViewController */,
+				0221158C2A8D6F40001E52C1 /* SecondViewController */,
+				022115912A8D6FDC001E52C1 /* ThirdViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +103,51 @@
 				022115862A8D6700001E52C1 /* FirstView.swift */,
 			);
 			path = FirstViewController;
+			sourceTree = "<group>";
+		};
+		0221158C2A8D6F40001E52C1 /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				022115882A8D6F2D001E52C1 /* SecondViewController.swift */,
+				0221158A2A8D6F37001E52C1 /* SecondView.swift */,
+			);
+			path = SecondViewController;
+			sourceTree = "<group>";
+		};
+		022115912A8D6FDC001E52C1 /* ThirdViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0221158F2A8D6FD7001E52C1 /* ThirdViewController.swift */,
+				0221158D2A8D6F5F001E52C1 /* ThirdView.swift */,
+			);
+			path = ThirdViewController;
+			sourceTree = "<group>";
+		};
+		022115922A8D733C001E52C1 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				022115952A8D7382001E52C1 /* Protocol */,
+				022115982A8D73A6001E52C1 /* FirstScreenCoordinator.swift */,
+				0221159D2A8D7424001E52C1 /* SecondScreenCoordinator.swift */,
+				0221159F2A8D746F001E52C1 /* ThirdScreenCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		022115952A8D7382001E52C1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				022115962A8D7382001E52C1 /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		022115A12A8D7654001E52C1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				022115A22A8D7654001E52C1 /* NavigationController.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,10 +220,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0221158B2A8D6F37001E52C1 /* SecondView.swift in Sources */,
 				022115842A8D66DA001E52C1 /* FirstViewController.swift in Sources */,
+				022115A02A8D746F001E52C1 /* ThirdScreenCoordinator.swift in Sources */,
 				022115872A8D6700001E52C1 /* FirstView.swift in Sources */,
+				022115A32A8D7654001E52C1 /* NavigationController.swift in Sources */,
+				0221159E2A8D7424001E52C1 /* SecondScreenCoordinator.swift in Sources */,
+				0221158E2A8D6F5F001E52C1 /* ThirdView.swift in Sources */,
 				0221156F2A8D6552001E52C1 /* AppDelegate.swift in Sources */,
+				022115892A8D6F2D001E52C1 /* SecondViewController.swift in Sources */,
+				022115902A8D6FD7001E52C1 /* ThirdViewController.swift in Sources */,
+				022115992A8D73A6001E52C1 /* FirstScreenCoordinator.swift in Sources */,
 				022115712A8D6552001E52C1 /* SceneDelegate.swift in Sources */,
+				022115972A8D7382001E52C1 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

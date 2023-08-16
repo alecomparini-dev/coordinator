@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  coordinator
 //
 //  Created by Alessandro Comparini on 16/08/23.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol FirstViewControllerCoordinator: AnyObject {
-    func goToSecondScreen()
+protocol SecondViewControllerCoordinator: AnyObject {
+    func goToFirstScreen()
     func goToThirdScreen()
 }
 
-class FirstViewController: UIViewController {
-    weak var coordinator: FirstViewControllerCoordinator?
+class SecondViewController: UIViewController {
+    weak var coordinator: SecondViewControllerCoordinator?
     
-    lazy var screen: FirstView = {
-        let view = FirstView()
+    lazy var screen: SecondView = {
+        let view = SecondView()
         return view
     }()
     
@@ -38,9 +38,9 @@ class FirstViewController: UIViewController {
 
 
 //  MARK: - EXTENSION FirstViewDelegate
-extension FirstViewController: FirstViewDelegate {
-    func goToSecondButtonTapped() {
-        coordinator?.goToSecondScreen()
+extension SecondViewController: SecondViewDelegate {
+    func goToFirstButtonTapped() {
+        coordinator?.goToFirstScreen()
     }
     
     func goToThirdButtonTapped() {

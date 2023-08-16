@@ -1,5 +1,5 @@
 //
-//  FirstView.swift
+//  ThirdView.swift
 //  coordinator
 //
 //  Created by Alessandro Comparini on 16/08/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol FirstViewDelegate: AnyObject {
+protocol ThirdViewDelegate: AnyObject {
+    func goToFirstButtonTapped()
     func goToSecondButtonTapped()
-    func goToThirdButtonTapped()
 }
 
-class FirstView: UIView {
-    weak var delegate: FirstViewDelegate?
+class ThirdView: UIView {
+    weak var delegate: ThirdViewDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -28,12 +28,24 @@ class FirstView: UIView {
 //  MARK: - LAZY AREA
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "SCREEN 1"
+        lbl.text = "SCREEN 3"
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 50)
         lbl.textColor = .black
         return lbl
     }()
+
+    lazy var goToFirstButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("GO SCREEN 1", for: .normal)
+        btn.tintColor = .white
+        btn.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        btn.addTarget(self, action: #selector(goToFirstButtonTapped), for: .touchUpInside)
+        return btn
+    }()
+    @objc func goToFirstButtonTapped() {
+        delegate?.goToFirstButtonTapped()
+    }
 
     lazy var goToSecondButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -46,21 +58,9 @@ class FirstView: UIView {
     @objc func goToSecondButtonTapped() {
         delegate?.goToSecondButtonTapped()
     }
-
-    lazy var goToThirdButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("GO SCREEN 3", for: .normal)
-        btn.tintColor = .white
-        btn.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
-        btn.addTarget(self, action: #selector(goToThirdButtonTapped), for: .touchUpInside)
-        return btn
-    }()
-    @objc func goToThirdButtonTapped() {
-        delegate?.goToThirdButtonTapped()
-    }
     
     lazy var stackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [titleLabel, goToSecondButton, goToThirdButton])
+        let sv = UIStackView(arrangedSubviews: [titleLabel, goToFirstButton, goToSecondButton])
         sv.axis = .vertical
         sv.spacing = 50
         sv.alignment = .center
@@ -77,7 +77,7 @@ class FirstView: UIView {
     }
     
     private func configBackgroundColor() {
-        backgroundColor = .systemCyan
+        backgroundColor = .systemRed
     }
     
     private func configConstraints() {

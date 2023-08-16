@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol FirstViewDelegate: AnyObject {
-    func goToSecondButtonTapped()
+protocol SecondViewDelegate: AnyObject {
+    func goToFirstButtonTapped()
     func goToThirdButtonTapped()
 }
 
-class FirstView: UIView {
-    weak var delegate: FirstViewDelegate?
+class SecondView: UIView {
+    weak var delegate: SecondViewDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -28,23 +28,23 @@ class FirstView: UIView {
 //  MARK: - LAZY AREA
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "SCREEN 1"
+        lbl.text = "SCREEN 2"
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 50)
         lbl.textColor = .black
         return lbl
     }()
 
-    lazy var goToSecondButton: UIButton = {
+    lazy var goToFirstButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("GO SCREEN 2", for: .normal)
+        btn.setTitle("GO SCREEN 1", for: .normal)
         btn.tintColor = .white
         btn.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
-        btn.addTarget(self, action: #selector(goToSecondButtonTapped), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(goToFirstButtonTapped), for: .touchUpInside)
         return btn
     }()
-    @objc func goToSecondButtonTapped() {
-        delegate?.goToSecondButtonTapped()
+    @objc func goToFirstButtonTapped() {
+        delegate?.goToFirstButtonTapped()
     }
 
     lazy var goToThirdButton: UIButton = {
@@ -60,7 +60,7 @@ class FirstView: UIView {
     }
     
     lazy var stackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [titleLabel, goToSecondButton, goToThirdButton])
+        let sv = UIStackView(arrangedSubviews: [titleLabel, goToFirstButton, goToThirdButton])
         sv.axis = .vertical
         sv.spacing = 50
         sv.alignment = .center
@@ -77,7 +77,7 @@ class FirstView: UIView {
     }
     
     private func configBackgroundColor() {
-        backgroundColor = .systemCyan
+        backgroundColor = .systemOrange
     }
     
     private func configConstraints() {
