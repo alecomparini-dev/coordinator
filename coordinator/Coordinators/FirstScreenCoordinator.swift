@@ -8,7 +8,7 @@
 import UIKit
 
 class FirstScreenCoordinator: Coordinator {
-    var controlCoordinator: Coordinator?
+    var childCoordinators: [Coordinator]? = []
     
     var navigationController: NavigationController
     
@@ -17,15 +17,25 @@ class FirstScreenCoordinator: Coordinator {
     }
 
     func start() {
-        controlCoordinator = self
-        let firstViewController = FirstViewController()
-        firstViewController.coordinator = self
-        if let vc = navigationController.containsViewController(ofType: FirstViewController.self) as? FirstViewController {
-            vc.coordinator = self
-            navigationController.popToViewController(vc, animated: true)
+        childCoordinators?.append(self)
+        if !validatorFactory().validate() {
             return
         }
-        navigationController.pushViewController(firstViewController, animated: true)
+        startFirstViewController()
+    }
+    
+    
+//  MARK: - PRIVATE AREA
+    private func validatorFactory() -> Validator {
+        defaultValidatorFactory(ofTypeViewController: FirstViewController(),
+                                                navigationController: navigationController,
+                                                coordinator: self)
+    }
+    
+    private func startFirstViewController() {
+        let thirdViewController = FirstViewController()
+        thirdViewController.coordinator = self
+        navigationController.pushViewController(thirdViewController, animated: true)
     }
     
 }
@@ -35,14 +45,14 @@ class FirstScreenCoordinator: Coordinator {
 
 extension FirstScreenCoordinator: FirstViewControllerCoordinator {
     func goToSecondScreen() {
-        controlCoordinator = nil
         let coordinator = SecondScreenCoordinator(navigationController)
         coordinator.start()
+        childCoordinators = nil
     }
 
     func goToThirdScreen() {
-        controlCoordinator = nil
         let coordinator = ThirdScreenCoordinator(navigationController)
         coordinator.start()
+        childCoordinators = nil
     }
 }

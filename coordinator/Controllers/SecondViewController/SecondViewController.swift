@@ -12,7 +12,7 @@ protocol SecondViewControllerCoordinator: AnyObject {
     func goToThirdScreen()
 }
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, ViewControllerCoordinator {
     weak var coordinator: SecondViewControllerCoordinator?
     
     lazy var screen: SecondView = {
