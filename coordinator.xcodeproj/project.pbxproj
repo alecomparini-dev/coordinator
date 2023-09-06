@@ -22,6 +22,7 @@
 		0221159E2A8D7424001E52C1 /* SecondScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221159D2A8D7424001E52C1 /* SecondScreenCoordinator.swift */; };
 		022115A02A8D746F001E52C1 /* ThirdScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221159F2A8D746F001E52C1 /* ThirdScreenCoordinator.swift */; };
 		022115A32A8D7654001E52C1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115A22A8D7654001E52C1 /* NavigationController.swift */; };
+		022115C62A8E660C001E52C1 /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022115C52A8E660C001E52C1 /* ViewControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0221159D2A8D7424001E52C1 /* SecondScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenCoordinator.swift; sourceTree = "<group>"; };
 		0221159F2A8D746F001E52C1 /* ThirdScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreenCoordinator.swift; sourceTree = "<group>"; };
 		022115A22A8D7654001E52C1 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		022115C52A8E660C001E52C1 /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		022115952A8D7382001E52C1 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				022115C52A8E660C001E52C1 /* ViewControllerCoordinator.swift */,
 				022115962A8D7382001E52C1 /* Coordinator.swift */,
 			);
 			path = Protocol;
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022115C62A8E660C001E52C1 /* ViewControllerCoordinator.swift in Sources */,
 				0221158B2A8D6F37001E52C1 /* SecondView.swift in Sources */,
 				022115842A8D66DA001E52C1 /* FirstViewController.swift in Sources */,
 				022115A02A8D746F001E52C1 /* ThirdScreenCoordinator.swift in Sources */,

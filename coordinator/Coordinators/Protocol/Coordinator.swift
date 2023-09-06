@@ -8,7 +8,7 @@
 import UIKit
 
 protocol Coordinator: AnyObject {
-    var controlCoordinator: Coordinator? { get set }
+    var childCoordinator: Coordinator? { get set }
     
     var navigationController: NavigationController { get }
     

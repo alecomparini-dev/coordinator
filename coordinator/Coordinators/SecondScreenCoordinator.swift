@@ -8,7 +8,7 @@
 import UIKit
 
 class SecondScreenCoordinator: Coordinator {
-    var controlCoordinator: Coordinator?
+    var childCoordinator: Coordinator?
 
     var navigationController: NavigationController
     
@@ -17,15 +17,10 @@ class SecondScreenCoordinator: Coordinator {
     }
     
     func start() {
-        controlCoordinator = self
-        let secondViewController = SecondViewController()
-        secondViewController.coordinator = self
-        if let vc = navigationController.containsViewController(ofType: SecondViewController.self) as? SecondViewController {
-            vc.coordinator = self
-            navigationController.popToViewController(vc, animated: true)
-            return
-        }
-        navigationController.pushViewController(secondViewController, animated: true)
+        childCoordinator = self
+        var controller = SecondViewController()
+        controller = navigationController.pushViewController(controller)
+        controller.coordinator = self
     }
     
 }
@@ -35,14 +30,14 @@ class SecondScreenCoordinator: Coordinator {
 
 extension SecondScreenCoordinator: SecondViewControllerCoordinator {
     func goToFirstScreen() {
-        controlCoordinator = nil
         let coordinator = FirstScreenCoordinator(navigationController)
         coordinator.start()
+        childCoordinator = nil
     }
     
     func goToThirdScreen() {
-        controlCoordinator = nil
         let coordinator = ThirdScreenCoordinator(navigationController)
         coordinator.start()
+        childCoordinator = nil
     }
 }
