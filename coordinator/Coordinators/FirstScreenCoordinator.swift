@@ -8,7 +8,7 @@
 import UIKit
 
 class FirstScreenCoordinator: Coordinator {
-    var childCoordinators: [Coordinator]? = []
+    var childCoordinator: Coordinator?
     
     var navigationController: NavigationController
     
@@ -17,27 +17,13 @@ class FirstScreenCoordinator: Coordinator {
     }
 
     func start() {
-        childCoordinators?.append(self)
-        if !validatorFactory().validate() {
-            return
-        }
-        startFirstViewController()
+        childCoordinator = self
+        var controller = FirstViewController()
+        controller = navigationController.pushViewController(controller)
+        controller.coordinator = self
     }
     
-    
-//  MARK: - PRIVATE AREA
-    private func validatorFactory() -> Validator {
-        defaultValidatorFactory(ofTypeViewController: FirstViewController(),
-                                                navigationController: navigationController,
-                                                coordinator: self)
-    }
-    
-    private func startFirstViewController() {
-        let thirdViewController = FirstViewController()
-        thirdViewController.coordinator = self
-        navigationController.pushViewController(thirdViewController, animated: true)
-    }
-    
+
 }
 
 
@@ -47,12 +33,12 @@ extension FirstScreenCoordinator: FirstViewControllerCoordinator {
     func goToSecondScreen() {
         let coordinator = SecondScreenCoordinator(navigationController)
         coordinator.start()
-        childCoordinators = nil
+        childCoordinator = nil
     }
 
     func goToThirdScreen() {
         let coordinator = ThirdScreenCoordinator(navigationController)
         coordinator.start()
-        childCoordinators = nil
+        childCoordinator = nil
     }
 }
